@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>MACACO MANIA</title>
+</head>
+<body>
+    <div class="tela-inicio">
+        <h1>MACACO MANIA</h1>
+        <button id="iniciar-jogo">Clique para Jogar</button>
+    </div>
+    <div class="container-tela">
+        <div class="tela">
+            <div class="placar">
+                <span id="texto-bananas">Bananas:</span>
+                <span id="contador">0</span>
+                <span id="timer">Tempo: 60</span>
+            </div>
+            <img src="imagens/arvore.png" alt="Árvore" class="arvore">
+            <img src="imagens/macaco.gif" alt="Macaco" class="macaco">
+            <img src="imagens/lobo.gif" alt="Lobo" class="lobo" id="lobo">
+        </div>
+    </div>
+    
+    <div class="game-over hidden">
+        <h1>GAME OVER</h1>
+        <p>Pontuação: <span id="pontuacao-final">0</span></p>
+        <p>Aperte qualquer tecla para reiniciar</p>
+        <button id="reiniciar">Reiniciar</button>
+    </div>
+
+    <audio id="somFundo" loop src="sons/fundo.mp3"></audio>
+    <audio id="somBanana" src="sons/banana.mp3"></audio>
+    <audio id="somPulo" src="sons/pulo.mp3"></audio>
+    <audio id="somFim" src="sons/fim.mp3"></audio>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

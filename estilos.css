@@ -89,7 +89,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 180px;
-    animation: animaLobo 1.5s infinite linear;
+    /* animation: animaLobo 1.5s infinite linear; Código comentado para realizar alteração no tempo de animação*/
     filter: brightness(0.8) contrast(1.8);
 }
 #lobo {

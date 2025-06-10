@@ -16,8 +16,39 @@ let intervaloTimer;
 let verificarColisao;
 let intervaloBananas;
 
+function moverLobo() {
+    const lobo = document.getElementById("lobo");
+    let pos = -180;
+
+    function iniciarCiclo() {
+        const duracao = Math.random() * 2 + 1; 
+        const destino = window.innerWidth + 200;
+        const inicio = performance.now();
+
+        function animarLobo(now) {
+            const progresso = (now - inicio) / (duracao * 1000);
+            const deslocamento = progresso * destino;
+            lobo.style.right = `${pos + deslocamento}px`;
+
+            if (deslocamento < destino) {
+                requestAnimationFrame(animarLobo);
+            } else {
+                pos = -180;
+                lobo.style.right = `${pos}px`;
+                iniciarCiclo(); // 
+            }
+        }
+
+        requestAnimationFrame(animarLobo);
+    }
+
+    iniciarCiclo();
+}
+
 function mostrarLobo() {
-    document.getElementById("lobo").style.display = "block";
+    const lobo = document.getElementById("lobo");
+    lobo.style.display = "block";
+    moverLobo();
 }
 
 function iniciarJogo() {
